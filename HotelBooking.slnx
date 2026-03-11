@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="src/HotelBooking.EndPoint.Common/HotelBooking.EndPoint.Common.csproj" Id="5bd4fa9b-0d83-4590-81df-b84e9444c1a4" />
+  <Project Path="src/HotelBooking.External/HotelBooking.External.csproj" />
+  <Project Path="src/HotelBooking.Infrastructure/HotelBooking.Infrastructure.csproj" />
+  <Project Path="src\HotelBooking\HotelBooking.EndPoint.csproj" />
+  <Project Path="tests/HotelBooking.Tests/HotelBooking.Tests.csproj" />
+</Solution>
