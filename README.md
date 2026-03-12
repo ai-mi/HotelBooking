@@ -205,3 +205,130 @@ For production deployment, consider:
 - Securing sensitive configuration data
 
 Time spent: ~ 4.5 hours
+
+## Technology Stack Recommendations
+
+### Recommended Stack (Current → Future)
+
+| Layer | Current | Recommended | Rationale |
+|-------|---------|-------------|-----------|
+| **API Framework** | ASP.NET Core | ASP.NET Core 8 | ✅ Keep - Modern, performant |
+| **Database** | SQLite | PostgreSQL | ⚠️ Upgrade - Production scalability |
+| **ORM** | EF Core | EF Core 8 | ✅ Keep - Good fit |
+| **Caching** | None | Redis | 🔴 Add - Essential for scale |
+| **Message Queue** | None | RabbitMQ / Azure Service Bus | 🟡 Add - Async processing |
+| **Auth** | None | Azure AD B2C / Auth0 | 🔴 Add - Security requirement |
+| **Logging** | Basic | Serilog + Seq | 🟡 Add - Observability |
+| **Monitoring** | None | Application Insights / Grafana | 🔴 Add - Production monitoring |
+| **API Gateway** | None | Azure API Management / Kong | 🟡 Add - For scale |
+| **Container** | None | Docker + Kubernetes | 🟡 Add - For cloud deployment |
+
+## Migration & Evolution Strategy
+
+### Phase 1: Foundation (Months 1-3)
+**Goal:** Make current system production-ready
+
+- ✅ Migrate SQLite → PostgreSQL
+- ✅ Add authentication & authorization
+- ✅ Implement comprehensive logging
+- ✅ Add health checks
+- ✅ Set up CI/CD pipeline
+- ✅ Add unit & integration tests (80% coverage)
+- ✅ Implement API versioning
+- ✅ Add input validation
+- ✅ Set up monitoring (Application Insights)
+- ✅ Documentation (OpenAPI, README)
+
+**Effort:** 240 hours (2 devs × 6 weeks)
+**Cost:** $30,000
+
+### Phase 2: Scale (Months 4-6)
+**Goal:** Prepare for growth
+
+- ✅ Add Redis caching layer
+- ✅ Implement rate limiting
+- ✅ Add database read replicas
+- ✅ Implement async processing (message queue)
+- ✅ Add CDN for static content
+- ✅ Optimize database queries
+- ✅ Implement connection pooling
+- ✅ Add load testing
+- ✅ Set up auto-scaling
+
+**Effort:** 320 hours (2 devs × 8 weeks)
+**Cost:** $40,000
+
+### Phase 3: Modularize (Months 7-12)
+**Goal:** Prepare for team growth
+
+- ✅ Refactor to modular monolith
+- ✅ Define module boundaries
+- ✅ Implement domain events
+- ✅ Add CQRS for read-heavy operations
+- ✅ Separate database schemas per module
+- ✅ Implement module-level testing
+- ✅ Document module contracts
+
+**Effort:** 480 hours (3 devs × 8 weeks)
+**Cost:** $60,000
+
+### Phase 4: Distribute (Months 13-18) - Optional
+**Goal:** Enable independent scaling
+
+- Extract Payment Service
+- Extract Notification Service
+- Extract Reporting Service
+- Implement API Gateway
+- Set up service mesh
+- Implement distributed tracing
+- Add service-to-service auth
+
+**Effort:** 960 hours (4 devs × 12 weeks)
+**Cost:** $120,000
+
+**Total Investment:** $250,000 over 18 months
+
+---
+
+## Decision Records
+
+### Key Architecture Decisions
+
+| # | Decision | Status | Date | Rationale |
+|---|----------|--------|------|-----------|
+| 1 | Use Layered Architecture Initially | ✅ Accepted | 2024-01 | Simple, fast to develop |
+| 2 | Migrate from SQLite to PostgreSQL | ✅ Accepted | 2024-01 | Production scalability |
+| 3 | Adopt Modular Monolith Pattern | 📋 Proposed | 2024-02 | Prepare for growth |
+| 4 | Implement CQRS for Reads | 📋 Proposed | 2024-03 | Optimize query performance |
+| 5 | Extract Payment Service | ⏳ Deferred | TBD | Wait for scale need |
+| 6 | Use Microservices Architecture | ❌ Rejected | 2024-01 | Too complex for current needs |
+| 7 | Add Redis Caching | ✅ Accepted | 2024-02 | Performance requirement |
+| 8 | Use Azure for Hosting | ✅ Accepted | 2024-01 | Enterprise requirements |
+
+---
+
+## Conclusion
+
+This hotel booking system can evolve from a simple layered monolith to a sophisticated distributed system as business needs dictate. The recommended approach is:
+
+1. **Start Simple** - Enhanced layered monolith with proper NFRs
+2. **Modularize** - Prepare for growth with modular monolith
+3. **Distribute Selectively** - Extract services only when clear benefit
+
+**Key Success Factors:**
+- Pragmatic approach (don't over-engineer)
+- Focus on business value
+- Invest in observability early
+- Automate everything
+- Leverage AI for productivity
+- Document decisions
+- Regular architecture reviews
+- Continuous refactoring
+
+**Anti-Patterns to Avoid:**
+- Premature microservices
+- Under-investment in monitoring
+- Skipping authentication
+- Ignoring technical debt
+- No deployment automation
+- Poor documentation
