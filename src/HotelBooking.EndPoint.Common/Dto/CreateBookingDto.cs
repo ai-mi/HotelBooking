@@ -8,8 +8,8 @@ public class CreateBookingDto
     public Guid? RoomId { get; set; }
     public RoomCategory? RoomCategory { get; set; }
     public Guid HotelId { get; set; }
-    public DateTime CheckInDate { get; set; }
-    public DateTime CheckOutDate { get; set; }
+    public DateOnly CheckInDate { get; set; }
+    public DateOnly CheckOutDate { get; set; }
     public int NumberOfGuests { get; set; }
     public BookingSource Source { get; set; }
     public string? SpecialRequests { get; set; }

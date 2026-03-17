@@ -147,8 +147,8 @@ public class RoomServiceTests
         var searchDto = new RoomAvailabilitySearchDto
         {
             HotelId = hotelId1,
-            CheckInDate = DateTime.Today.AddDays(1),
-            CheckOutDate = DateTime.Today.AddDays(3),
+            CheckInDate = DateOnly.FromDateTime(DateTime.Today.AddDays(1)),
+            CheckOutDate = DateOnly.FromDateTime(DateTime.Today.AddDays(3)),
             NumberOfGuests = 2
         };
 
@@ -203,8 +203,8 @@ public class RoomServiceTests
         var searchDto = new RoomAvailabilitySearchDto
         {
             Category = RoomCategory.Suite,
-            CheckInDate = DateTime.Today.AddDays(1),
-            CheckOutDate = DateTime.Today.AddDays(3),
+            CheckInDate = DateOnly.FromDateTime(DateTime.Today.AddDays(1)),
+            CheckOutDate = DateOnly.FromDateTime(DateTime.Today.AddDays(3)),
             NumberOfGuests = 2
         };
 
@@ -258,8 +258,8 @@ public class RoomServiceTests
 
         var searchDto = new RoomAvailabilitySearchDto
         {
-            CheckInDate = DateTime.Today.AddDays(1),
-            CheckOutDate = DateTime.Today.AddDays(3),
+            CheckInDate = DateOnly.FromDateTime(DateTime.Today.AddDays(1)),
+            CheckOutDate = DateOnly.FromDateTime(DateTime.Today.AddDays(3)),
             NumberOfGuests = 3
         };
 
@@ -298,8 +298,8 @@ public class RoomServiceTests
 
         var searchDto = new RoomAvailabilitySearchDto
         {
-            CheckInDate = DateTime.Today.AddDays(1),
-            CheckOutDate = DateTime.Today.AddDays(4), // 3 nights
+            CheckInDate = DateOnly.FromDateTime(DateTime.Today.AddDays(1)),
+            CheckOutDate = DateOnly.FromDateTime(DateTime.Today.AddDays(4)), // 3 nights
             NumberOfGuests = 2
         };
 
@@ -365,8 +365,8 @@ public class RoomServiceTests
 
         var searchDto = new RoomAvailabilitySearchDto
         {
-            CheckInDate = DateTime.Today.AddDays(1),
-            CheckOutDate = DateTime.Today.AddDays(3),
+            CheckInDate = DateOnly.FromDateTime(DateTime.Today.AddDays(1)),
+            CheckOutDate = DateOnly.FromDateTime(DateTime.Today.AddDays(3)),
             NumberOfGuests = 2
         };
 

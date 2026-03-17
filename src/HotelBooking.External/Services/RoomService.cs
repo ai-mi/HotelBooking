@@ -62,7 +62,7 @@ namespace HotelBooking.External.Services
 				// Check if room is available for the specified dates
 				if (await IsRoomAvailableAsync(room.Id, searchDto.CheckInDate, searchDto.CheckOutDate))
 				{
-					var nights = (searchDto.CheckOutDate - searchDto.CheckInDate).Days;
+					var nights = searchDto.CheckOutDate.DayNumber - searchDto.CheckInDate.DayNumber;
 					var totalPrice = room.PricePerNight * nights;
 
 					availableRooms.Add(new AvailableRoomDto
@@ -95,7 +95,7 @@ namespace HotelBooking.External.Services
 			return roomDtos;
 		}
 
-		public async Task<bool> IsRoomAvailableAsync(Guid roomId, DateTime checkIn, DateTime checkOut)
+		public async Task<bool> IsRoomAvailableAsync(Guid roomId, DateOnly checkIn, DateOnly checkOut)
 		{
 			var conflictingBookings = await _unitOfWork.Bookings.FindAsync(b =>
 				b.RoomId == roomId &&

@@ -74,8 +74,8 @@ public class RoomsControllerTests
         // Arrange
         var searchDto = new RoomAvailabilitySearchDto
         {
-            CheckInDate = DateTime.UtcNow.Date.AddDays(1),
-            CheckOutDate = DateTime.UtcNow.Date.AddDays(3),
+            CheckInDate = DateOnly.FromDateTime(DateTime.UtcNow.Date.AddDays(1)),
+            CheckOutDate = DateOnly.FromDateTime(DateTime.UtcNow.Date.AddDays(3)),
             NumberOfGuests = 2
         };
 
@@ -111,8 +111,8 @@ public class RoomsControllerTests
         // Arrange
         var searchDto = new RoomAvailabilitySearchDto
         {
-            CheckInDate = DateTime.UtcNow.Date.AddDays(3),
-            CheckOutDate = DateTime.UtcNow.Date.AddDays(1), // Before check-in
+            CheckInDate = DateOnly.FromDateTime(DateTime.UtcNow.Date.AddDays(3)),
+            CheckOutDate = DateOnly.FromDateTime(DateTime.UtcNow.Date.AddDays(1)), // Before check-in
             NumberOfGuests = 2
         };
 
@@ -131,8 +131,8 @@ public class RoomsControllerTests
         // Arrange
         var searchDto = new RoomAvailabilitySearchDto
         {
-            CheckInDate = DateTime.UtcNow.Date.AddDays(1),
-            CheckOutDate = DateTime.UtcNow.Date.AddDays(3),
+            CheckInDate = DateOnly.FromDateTime(DateTime.UtcNow.Date.AddDays(1)),
+            CheckOutDate = DateOnly.FromDateTime(DateTime.UtcNow.Date.AddDays(3)),
             NumberOfGuests = 2
         };
 
@@ -153,8 +153,8 @@ public class RoomsControllerTests
         // Arrange
         var searchDto = new RoomAvailabilitySearchDto
         {
-            CheckInDate = DateTime.UtcNow.Date.AddDays(1),
-            CheckOutDate = DateTime.UtcNow.Date.AddDays(3),
+            CheckInDate = DateOnly.FromDateTime(DateTime.UtcNow.Date.AddDays(1)),
+            CheckOutDate = DateOnly.FromDateTime(DateTime.UtcNow.Date.AddDays(3)),
             NumberOfGuests = 2
         };
 

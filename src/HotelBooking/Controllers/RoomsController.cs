@@ -54,7 +54,7 @@ namespace HotelBooking.EndPoint.Controllers
 		{
 			try
 			{
-				if (searchDto.CheckInDate < DateTime.UtcNow.Date)
+				if (searchDto.CheckInDate < DateOnly.FromDateTime(DateTime.UtcNow.Date))
 					return BadRequest(new { message = "Check-in date cannot be in the past" });
 
 				if (searchDto.CheckOutDate <= searchDto.CheckInDate)
@@ -85,12 +85,12 @@ namespace HotelBooking.EndPoint.Controllers
 		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		public async Task<ActionResult> CheckRoomAvailability(
 			Guid id,
-			[FromQuery] DateTime checkIn,
-			[FromQuery] DateTime checkOut)
+			[FromQuery] DateOnly checkIn,
+			[FromQuery] DateOnly checkOut)
 		{
 			try
 			{
-				if (checkIn < DateTime.UtcNow.Date)
+				if (checkIn < DateOnly.FromDateTime(DateTime.UtcNow.Date))
 					return BadRequest(new { message = "Check-in date cannot be in the past" });
 
 				if (checkOut <= checkIn)
