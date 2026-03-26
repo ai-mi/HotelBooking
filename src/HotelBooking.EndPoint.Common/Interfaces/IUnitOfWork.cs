@@ -1,9 +1,4 @@
 ﻿using HotelBooking.EndPoint.Common.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelBooking.EndPoint.Common.Interfaces
 {
@@ -15,5 +10,11 @@ namespace HotelBooking.EndPoint.Common.Interfaces
 		IRepository<Booking> Bookings { get; }
 		IRepository<Payment> Payments { get; }
 		IRepository<LoyaltyMember> LoyaltyMembers { get; }
+		IRepository<LoyaltyTransaction> LoyaltyTransactions { get; }
+		IRepository<RoomAuditLog> RoomAuditLogs { get; }
+		IRepository<BookingAuditLog> BookingAuditLogs { get; }
+		IRepository<CustomerAuditLog> CustomerAuditLogs { get; }
+
+		Task<int> SaveChangesAsync();
 	}
 }

@@ -13,8 +13,8 @@ public class BookingHistoryItem
 {
     public string BookingReference { get; set; } = string.Empty;
     public string CustomerName { get; set; } = string.Empty;
-    public DateTime CheckInDate { get; set; }
-    public DateTime CheckOutDate { get; set; }
+    public DateOnly CheckInDate { get; set; }
+    public DateOnly CheckOutDate { get; set; }
     public string Status { get; set; } = string.Empty;
 }
 

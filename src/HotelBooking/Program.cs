@@ -33,6 +33,10 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 // Register Application Services
 
 builder.Services.AddScoped<IRoomService, RoomService>();
+builder.Services.AddScoped<IBookingService, BookingService>();
+builder.Services.AddScoped<ILoyaltyService, LoyaltyService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IHotelService, HotelService>();
 
 // Configure CORS
 builder.Services.AddCors(options =>

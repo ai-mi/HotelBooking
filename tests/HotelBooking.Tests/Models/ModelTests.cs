@@ -58,9 +58,8 @@ public class RoomTests
     [InlineData(RoomCategory.Standard)]
     [InlineData(RoomCategory.Deluxe)]
     [InlineData(RoomCategory.Suite)]
-    [InlineData(RoomCategory.Penthouse)]
     [InlineData(RoomCategory.Family)]
-    [InlineData(RoomCategory.Executive)]
+    [InlineData(RoomCategory.Superior)]
     public void Room_ShouldAcceptAllValidCategories(RoomCategory category)
     {
         // Arrange & Act
